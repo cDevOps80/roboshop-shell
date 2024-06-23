@@ -1,7 +1,7 @@
 
 server=$1
 
-[ -z "$server" ] && echo -e "\e[31mInput is missing --> bash $0 <server-name>[0m" && exit 1
+[ -z "$server" ] && echo -e "\e[31mInput is missing --> bash $0 <server-name> \e[0m" && exit 1
 
 ami_id="ami-031d574cddc5bb371"
 sg_id="sg-0665a56c7cd09a0e0"
