@@ -18,7 +18,7 @@ private_ip=$(aws ec2 run-instances \
     --security-group-ids $sg_id \
     --instance-market-options 'MarketType=spot,SpotOptions={SpotInstanceType=persistent,InstanceInterruptionBehavior=stop}' \
     --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$component}]" "ResourceType=volume,Tags=[{Key=Name,Value=$component}]" \
-    --query "Instances[].PrivateIpAddress" --output text)
+    --query "Instances[].PrivateIpAddress" --output text )
 
 sed  -e "s/\$component/${component}/" -e "s/\${record_name}/${component}.${domain_name}/" -e "s/\${private_ip}/${private_ip}/" record.json > /tmp/record.json
 
@@ -27,6 +27,8 @@ aws route53   change-resource-record-sets \
   --change-batch file:///tmp/record.json
 }
 
+ 
+ 
  for component in $server
  do
 
