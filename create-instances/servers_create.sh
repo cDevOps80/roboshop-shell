@@ -12,11 +12,11 @@ domain_name="azcart.online"
 create_instance() {
 
 aws ec2 run-instances \
-   --region us-east-1
+   --region us-east-1 \
    --image-id $ami_id \ 
    --instance-type $instance_type \
    --security-group-ids $sg_id \ 
-   --instance-market-options 'MarketType=spot,SpotOptions={SpotInstanceType=persistent,InstanceInterruptionBehavior=stop}'
+   --instance-market-options 'MarketType=spot,SpotOptions={SpotInstanceType=persistent,InstanceInterruptionBehavior=stop}' \
    --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$component}]' 'ResourceType=volume,Tags=[{Key=Name,Value=$component}]"
 
 }   
