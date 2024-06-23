@@ -16,7 +16,8 @@ aws ec2 run-instances \
     --instance-type $instance_type \
     --security-group-ids $sg_id \
     --instance-market-options 'MarketType=spot,SpotOptions={SpotInstanceType=persistent,InstanceInterruptionBehavior=stop}' \
-    --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$component}]" "ResourceType=volume,Tags=[{Key=Name,Value=$component}]"
+    --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$component}]" "ResourceType=volume,Tags=[{Key=Name,Value=$component}]" \
+    --query "Instances[].PrivateIpAddress" --output text
 }
 
  for component in $server
