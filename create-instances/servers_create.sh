@@ -11,12 +11,11 @@ domain_name="azcart.online"
 
 create_instance() {
 aws ec2 run-instances \              
-    --instance-type ${instance_type} \    
-    --image-id ${ami_id}  \    
-    --security-group-ids ${sg_id}  \ 
-   --instance-market-options 'MarketType=spot,SpotOptions={SpotInstanceType=persistent,InstanceInterruptionBehavior=stop}' \
-
-   --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$component}]" "ResourceType=volume,Tags=[{Key=Name,Value=$component}]"
+--instance-type ${instance_type} \    
+--image-id ${ami_id}  \    
+--security-group-ids ${sg_id}  \ 
+--instance-market-options 'MarketType=spot,SpotOptions={SpotInstanceType=persistent,InstanceInterruptionBehavior=stop}' \
+--tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$component}]" "ResourceType=volume,Tags=[{Key=Name,Value=$component}]"
 
 }
    
