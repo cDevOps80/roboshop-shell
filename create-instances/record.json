@@ -1,0 +1,13 @@
+{
+    "Comment": "Update record of $component",
+    "Changes": [
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "${record_name}",
+        "Type": "A",
+        "TTL": 30,
+        "ResourceRecords": [ { "Value": "${private_ip}" } ]
+        } 
+    } ]
+}    

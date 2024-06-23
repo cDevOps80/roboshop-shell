@@ -18,6 +18,10 @@ aws ec2 run-instances \
     --instance-market-options 'MarketType=spot,SpotOptions={SpotInstanceType=persistent,InstanceInterruptionBehavior=stop}' \
     --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$component}]" "ResourceType=volume,Tags=[{Key=Name,Value=$component}]" \
     --query "Instances[].PrivateIpAddress" --output text
+
+aws route53   change-resource-record-sets \
+  --hosted-zone-id $hostedzone_id \
+  --change-batch file://
 }
 
  for component in $server
