@@ -12,6 +12,7 @@ domain_name="azcart.online"
 
 create_instance() {
 private_ip=$(aws ec2 run-instances \
+    --region us-east-1 \
     --image-id $ami_id \
     --instance-type $instance_type \
     --security-group-ids $sg_id \
