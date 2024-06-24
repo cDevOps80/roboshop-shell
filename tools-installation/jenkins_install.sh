@@ -28,12 +28,12 @@ status_check "Starting jenkins service"
 
 jenkins_password=$(cat /var/lib/jenkins/secrets/initialAdminPassword)
 cat /var/lib/jenkins/secrets/initialAdminPassword >> /tmp/jenkins_password
-status_check "Catching jenkins initial admin password into a file  --> /tmp/jenkins_password <-- future reference"
+status_check "Catching jenkins initial admin password into a file  --> /tmp/jenkins_password <-- future reference\n"
 
-echo -e "Prompting jenkins intitial admin password\n\n"
+echo -e "$C Prompting jenkins intitial admin password\n"
 echo "------------------------------"
 echo $jenkins_password
-echo "------------------------------"
+echo "------------------------------$N"
 
 
 
