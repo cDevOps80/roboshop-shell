@@ -33,7 +33,7 @@ status_check "Catching jenkins initial admin password into a file  --> /tmp/jenk
 echo -e "\n$C Prompting jenkins intitial admin password"
 echo " ------------------------------"
 echo " $jenkins_password"
-echo " ------------------------------$N"
+echo -e " ------------------------------$N"
 
 
 
