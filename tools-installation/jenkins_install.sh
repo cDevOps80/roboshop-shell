@@ -34,12 +34,3 @@ echo -e "\n$C Prompting jenkins intitial admin password"
 echo " ------------------------------"
 echo " $jenkins_password"
 echo -e " ------------------------------$N"
-
-
-
-
-
-
-
-
-
