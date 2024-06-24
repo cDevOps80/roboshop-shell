@@ -7,7 +7,7 @@ cat << EOF > /etc/yum.repos.d/jenkins.repo
 [jenkins]
 name=Jenkins-stable
 baseurl=http://pkg.jenkins.io/redhat-stable
-gpgcheck=1
+gpgcheck=0
 EOF
 status_check "Adding jenkins repo file"
 
