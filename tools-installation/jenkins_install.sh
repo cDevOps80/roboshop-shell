@@ -26,4 +26,20 @@ status_check "Enable jenkins service"
 systemctl start jenkins &>> $LOG_FILE
 status_check "Starting jenkins service"
 
+jenkins_password=$(cat /var/lib/jenkins/secrets/initialAdminPassword)
+cat /var/lib/jenkins/secrets/initialAdminPassword >> /tmp/jenkins_password
+status_check "Catching jenkins initial admin password into a file  --> /tmp/jenkins_password <-- future reference"
+
+echo -e "Prompting jenkins intitial admin password\n\n"
+echo "------------------------------"
+echo $jenkins_password
+echo "------------------------------"
+
+
+
+
+
+
+
+
 
