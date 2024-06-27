@@ -3,9 +3,9 @@ server=$1
 
 [ -z "$server" ] && echo -e "\e[31mInput is missing --> bash $0 <server-name> \e[0m" && exit 1
 
-ami_id="ami-031d574cddc5bb371"
+ami_id="ami-041e2ea9402c46c32"
 sg_id="sg-0665a56c7cd09a0e0"
-instance_type="t2.micro"
+instance_type="t3.micro"
 hostedzone_id="Z0144525QEQQSOE8RRNR"
 domain_name="azcart.online"
 env="dev"
