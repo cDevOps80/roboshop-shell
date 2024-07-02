@@ -30,7 +30,7 @@ jenkins_password=$(cat /var/lib/jenkins/secrets/initialAdminPassword)
 cat /var/lib/jenkins/secrets/initialAdminPassword >> /tmp/jenkins_password
 status_check "Catching jenkins initial admin password into a file  --> /tmp/jenkins_password <-- future reference"
 
-echo -e "\n$C Prompting jenkins intitial admin password"
+echo -e "\n$C Prompting jenkins initial admin password"
 echo " ------------------------------"
 echo " $jenkins_password"
 echo -e " ------------------------------$N"
