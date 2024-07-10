@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo yum update -y
-sudo yum install httpd -y
+sudo yum update -y &>> /tmp/1.log
+sudo yum install httpd -y  &>> /tmp/1.log
 echo "This is MY user data script" > /var/www/html/index.html
-sudo service httpd start
+sudo service httpd start &>> /tmp/1.log
