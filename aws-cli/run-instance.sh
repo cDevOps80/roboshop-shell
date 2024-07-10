@@ -4,4 +4,4 @@ aws ec2 run-instances \
     --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=webserver}]' \
     --security-group-ids sg-098c66671a7255c8e \
     --user-data file://my_script.txt \
-    --key-pair bhanu
+    --key-name bhanu
